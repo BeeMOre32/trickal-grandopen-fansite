@@ -1,8 +1,7 @@
 import { getLeftTimeTo202309271200 } from "@/constants/leftTime";
 import React from "react";
 import Image from "next/image";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+
 import { SiNaver } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
@@ -46,7 +45,7 @@ export default function Home() {
               </h1>
 
               <span className="text-3xl text-[#391e0e] font-bold flex justify-center items-center">
-                <UserCount from={0} to={200000} />명 달성!
+                <UserCount from={0} to={200000} />명 이상 달성!
               </span>
             </div>
             <h1 className="text-center sm:text-3xl text-xl leading-8 text-[#391e0e] font-extrabold ">
