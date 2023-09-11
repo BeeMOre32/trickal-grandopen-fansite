@@ -45,6 +45,7 @@ export default function Home() {
         <motion.img
           src="/main-logo.png"
           alt="main-logo"
+          className={`max-sm:w-[400px]`}
           animate={{
             y: [0, 20, 0],
           }}
@@ -54,7 +55,7 @@ export default function Home() {
             type: "spring",
           }}
         />
-        <div className="max-sm:p-0 max-sm:min-w-[75%] lg:p-6 lg:min-w-full  rounded-md flex justify-center flex-col gap-6 shadow-[5px_5px_50px_rgba(47,46,60,1)] bg-[#ecd9ba] border-4 border-[#391e0e]">
+        <div className="max-sm:p-7 max-sm:min-w-[75%] lg:p-6 lg:min-w-full  rounded-md flex justify-center flex-col gap-6 shadow-[5px_5px_50px_rgba(47,46,60,1)] bg-[#ecd9ba] border-4 border-[#391e0e]">
           <div className="flex flex-col gap-5">
             <div>
               <h1 className="text-center sm:text-2xl text-xl leading-8 text-[#391e0e] font-extrabold ">
