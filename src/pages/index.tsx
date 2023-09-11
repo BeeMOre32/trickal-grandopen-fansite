@@ -11,24 +11,7 @@ import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 
 export default function Home() {
-  const { data: userCount, isLoading } = useQuery(
-    ["getUsers"],
-    async () => {
-      return await (
-        await axios.get("/api/getUserCount")
-      ).data.data;
-    },
-    {
-      refetchInterval: 1000 * 10,
-      onSuccess: (data) => {
-        if (userCount === undefined) return;
-        setPrevUserCount(parseInt(userCount));
-      },
-    },
-  );
-
   const [countDownTime, setCountDownTime] = React.useState<any>();
-  const [prevUserCount, setPrevUserCount] = React.useState<number>(0);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -63,19 +46,7 @@ export default function Home() {
               </h1>
 
               <span className="text-3xl text-[#391e0e] font-bold flex justify-center items-center">
-                {isLoading ? (
-                  <p className="animate-pulse w-12 h-5 bg-[#391e0e] rounded-md" />
-                ) : (
-                  <UserCount
-                    from={prevUserCount ?? 0}
-                    to={
-                      userCount !== undefined
-                        ? parseInt(userCount.replace(/,/g, ""))
-                        : 0
-                    }
-                  />
-                )}
-                명
+                <UserCount from={0} to={200000} />명 달성!
               </span>
             </div>
             <h1 className="text-center sm:text-3xl text-xl leading-8 text-[#391e0e] font-extrabold ">
