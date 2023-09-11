@@ -8,9 +8,10 @@ import { FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import UserCount from "@/component/user-count";
 import Link from "next/link";
+import { BsGithub } from "react-icons/bs";
 
 export default function Home() {
-  const { data: userCount, isPreviousData } = useQuery(
+  const { data: userCount, isLoading } = useQuery(
     ["getUsers"],
     async () => {
       return await (
@@ -60,15 +61,19 @@ export default function Home() {
                 현재 트릭컬에 등록한 교주님들
               </h1>
 
-              <span className="text-3xl text-[#391e0e] font-bold flex justify-center">
-                <UserCount
-                  from={prevUserCount ?? 0}
-                  to={
-                    userCount !== undefined
-                      ? parseInt(userCount.replace(/,/g, ""))
-                      : 0
-                  }
-                />
+              <span className="text-3xl text-[#391e0e] font-bold flex justify-center items-center">
+                {isLoading ? (
+                  <p className="animate-pulse w-12 h-5 bg-[#391e0e] rounded-md" />
+                ) : (
+                  <UserCount
+                    from={prevUserCount ?? 0}
+                    to={
+                      userCount !== undefined
+                        ? parseInt(userCount.replace(/,/g, ""))
+                        : 0
+                    }
+                  />
+                )}
                 명
               </span>
             </div>
@@ -105,8 +110,16 @@ export default function Home() {
         </div>
       </div>
 
-      <p className="text-[#391e0e] text-sm font-bold">
-        © 2023 Trickal. All rights reserved.
+      <p className="text-[#391e0e] text-sm font-bold flex gap-3 items-center mt-10">
+        <span>
+          이 사이트는 트릭컬의 공식 사이트가 아닙니다. <br />
+        </span>
+        <Link
+          href="https://github.com/BeeMOre32/trickal-grandopen-fansite"
+          target="_blank"
+        >
+          <BsGithub size={40} className="inline-block" />
+        </Link>
       </p>
 
       <motion.div className="absolute top-1/2 bottom-1/2 right-10 z-1">
