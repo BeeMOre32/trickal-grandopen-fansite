@@ -41,7 +41,7 @@ export default function Home() {
     <div
       className={`flex flex-col items-center justify-center min-h-screen  text-center font-sans`}
     >
-      <div className="flex justify-center gap-3 sm:gap-8 flex-col">
+      <div className="flex justify-center gap-3 sm:gap-8 flex-col items-center">
         <motion.img
           src="/main-logo.png"
           alt="main-logo"
@@ -54,7 +54,7 @@ export default function Home() {
             type: "spring",
           }}
         />
-        <div className="sm:p-6 rounded-md flex justify-center flex-col gap-6 shadow-[5px_5px_50px_rgba(47,46,60,1)] bg-[#ecd9ba] border-4 border-[#391e0e]">
+        <div className="max-sm:p-0 max-sm:min-w-[75%] lg:p-6  rounded-md flex justify-center flex-col gap-6 shadow-[5px_5px_50px_rgba(47,46,60,1)] bg-[#ecd9ba] border-4 border-[#391e0e]">
           <div className="flex flex-col gap-5">
             <div>
               <h1 className="text-center sm:text-2xl text-xl leading-8 text-[#391e0e] font-extrabold ">
@@ -81,27 +81,27 @@ export default function Home() {
               트릭컬 오픈까지 남은 시간
             </h1>
           </div>
-          <div className="flex justify-around sm:px-4">
+          <div className="flex justify-around sm:px-4 mb-4">
             <div className="flex flex-col justify-center items-center gap-3">
-              <span className="py-3 px-3 flex justify-center items-centerbg-inherit text-[#391e0e] text-3xl font-semibold rounded-md">
+              <span className="flex justify-center items-centerbg-inherit text-[#391e0e] text-3xl font-semibold rounded-md">
                 {countDownTime?.diffDays.toFixed(0)}
               </span>
               <span className="text-sm text-[#391e0e] font-bold">일</span>
             </div>
             <div className="flex flex-col justify-center items-center gap-3">
-              <span className="py-3 px-3 bg-inherit text-[#391e0e] text-3xl font-semibold rounded-md">
+              <span className="bg-inherit text-[#391e0e] text-3xl font-semibold rounded-md">
                 {countDownTime?.diffHours.toFixed(0)}
               </span>
               <span className="text-sm text-[#391e0e] font-bold">시간</span>
             </div>
             <div className="flex flex-col justify-center items-center gap-3">
-              <span className="py-3 px-3 bg-inherit text-[#391e0e] text-3xl font-semibold rounded-md">
+              <span className="bg-inherit text-[#391e0e] text-3xl font-semibold rounded-md">
                 {countDownTime?.diffMinutes.toFixed(0)}
               </span>
               <span className="text-sm text-[#391e0e] font-bold">분 </span>
             </div>
             <div className="flex flex-col justify-center items-center gap-3">
-              <span className="py-3 px-3 bg-inherit  text-[#391e0e] text-3xl font-semibold rounded-md">
+              <span className="bg-inherit  text-[#391e0e] text-3xl font-semibold rounded-md">
                 {countDownTime?.diffSeconds.toFixed(0)}
               </span>
               <span className="text-sm text-[#391e0e] font-bold">초 </span>
@@ -122,7 +122,7 @@ export default function Home() {
         </Link>
       </p>
 
-      <motion.div className="absolute top-1/2 bottom-1/2 right-10 z-1">
+      <motion.div className="xl:absolute top-1/2 bottom-1/2 right-10 z-1 max-sm:hidden">
         <div className="flex flex-col items-center justify-center gap-5 bg-[#ecd9ba] p-3 rounded shadow-2xl border-4 border-[#391e0e]">
           <Link href="https://cafe.naver.com/trickcal">
             <SiNaver size={30} />
